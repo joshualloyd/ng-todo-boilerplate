@@ -1,5 +1,29 @@
 "use strict";
 
+let todoApp = angular.module('TodoApp', ['ngRoute'])
+.constant('FirebaseUrl', 'https://todos-2430e.firebaseio.com/');
+
+todoApp.config( ($routeProvider)=>{
+	$routeProvider
+		.when('/', {
+			templateUrl: 'partials/login.html',
+			controller: 'UserController'
+		})
+		.when('/todos/view', {
+			templateUrl: 'partials/todo-list.html',
+			controller: 'TodoListController'
+		})
+		.when('/todos/new', {
+			templateUrl: 'partials/todo-form.html',
+			controller: 'TodoAddController'
+		})
+		.otherwise('/');
+});
+
+
+
+
+
 // $scope.items = [
 //   {
 //     id: 0,
