@@ -3,7 +3,7 @@
 todoApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
 
   var config = {
-    apiKey: FBCreds.key,
+    apiKey: FBCreds.apiKey,
     authDomain: FBCreds.authDomain
   };
 
